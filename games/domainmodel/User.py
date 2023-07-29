@@ -1,4 +1,3 @@
-from games.domainmodel.Review import Review
 from games.domainmodel.Game import Game
 
 class User:
@@ -10,61 +9,56 @@ class User:
     if len(password) < 7:
         raise ValueError
 
-    self._username = username.strip().lower()
-    self._password = password
-    self._favourite_games = []
-    self._reviews = []
+    self.__username = username.strip().lower()
+    self.__password = password
+    self.__favourite_games = []
+    self.__reviews = []
 
   def __repr__(self):
-    return f"<User {self._username}>"
+    return f"<User {self.__username}>"
 
   def __eq__(self, other):
     if isinstance(other, User):
-        return self._username == other._username
+        return self.__username == other.__username
     return False
 
   def __lt__(self, other):
     if isinstance(other, User):
-        return self._username < other._username
+        return self.__username < other.__username
     return NotImplemented
 
   def __hash__(self):
-    return hash(self._username)
+    return hash(self.__username)
 
   @property
   def username(self):
-    return self._username
+    return self.__username
 
   @property
   def password(self):
-    return self._password
+    return self.__password
 
   @property
   def favourite_games(self):
-    return self._favourite_games
+    return self.__favourite_games
 
   @property
   def reviews(self):
-    return self._reviews
+    return self.__reviews
 
   def add_favourite_game(self, game):
     if not isinstance(game, Game):
         raise ValueError
-    if game not in self._favourite_games:
-        self._favourite_games.append(game)
+    if game not in self.__favourite_games:
+        self.__favourite_games.append(game)
 
   def remove_favourite_game(self, game):
     if not isinstance(game, Game):
         raise ValueError
-    self._favourite_games.remove(game)
+    self.__favourite_games.remove(game)
 
   def add_review(self, review):
-    if not isinstance(review, Review):
-        raise ValueError
-    if review not in self._reviews:
-        self._reviews.append(review)
+    self.__reviews.append(review)
 
   def remove_review(self, review):
-    if not isinstance(review, Review):
-        raise ValueError
-    self._reviews.remove(review)
+    self.__reviews.remove(review)

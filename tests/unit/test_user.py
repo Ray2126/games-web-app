@@ -1,6 +1,5 @@
 import pytest
 from games.domainmodel.Game import Game
-from games.domainmodel.Genre import Genre
 from games.domainmodel.User import User
 from games.domainmodel.Review import Review
 
@@ -47,14 +46,14 @@ def test_remove_favourite_game(create_user):
 def test_add_review(create_user):
     user = create_user
     game = Game(0, "Game A")
-    review = Review(game, 4, "Great game!")
+    review = Review(user, game, 4, "Great game!")
     user.add_review(review)
     assert review in user.reviews
 
 def test_remove_review(create_user):
     user = create_user
     game = Game(0, "Game A")
-    review = Review(game, 4, "Great game!")
+    review = Review(user, game, 4, "Great game!")
     user.add_review(review)
     user.remove_review(review)
     assert review not in user.reviews
@@ -68,13 +67,3 @@ def test_remove_invalid_game_as_favourite(create_user):
     user = create_user
     with pytest.raises(ValueError):
         user.remove_favourite_game("Invalid Game")
-
-def test_add_invalid_review(create_user):
-    user = create_user
-    with pytest.raises(ValueError):
-        user.add_review("Invalid Review")
-
-def test_remove_invalid_review(create_user):
-    user = create_user
-    with pytest.raises(ValueError):
-        user.remove_review("Invalid Review")
