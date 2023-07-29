@@ -100,9 +100,14 @@ class Game:
     return f"<Game {self.__game_id}, {self.__title}>"
   
   def add_genre(self, genre):
-    self.__genres.append(genre)
+    if not isinstance(genre, Genre):
+      raise ValueError
+    if genre not in self.__genres:
+      self.__genres.append(genre)
   
   def remove_genre(self, genre):
+    if not isinstance(genre, Genre):
+      raise ValueError
     self.__genres.remove(genre)
 
   def __eq__(self, other):

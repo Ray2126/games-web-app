@@ -92,11 +92,16 @@ def test_add_remove_genres(game):
   genre1 = Genre("Action")
   genre2 = Genre("Adventure")
   game.add_genre(genre1)
+  game.add_genre(genre1)
   assert game.genres == [ genre1 ]
   game.add_genre(genre2)
   assert game.genres == [ genre1, genre2 ]
   game.remove_genre(genre1)
   assert game.genres == [ genre2 ]
+  with pytest.raises(ValueError):
+    game.add_genre("1234")
+  with pytest.raises(ValueError):
+    game.remove_genre("1234")
 
 def test_eq(game):
   game2 = Game(1, "Overwatch")
