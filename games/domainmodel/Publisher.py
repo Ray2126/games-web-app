@@ -29,28 +29,3 @@ class Publisher:
     def __hash__(self):
         # TODO
         pass
-
-
-class Genre:
-    # TODO
-    pass
-
-
-class Game:
-    # TODO
-    pass
-
-
-class User:
-    # TODO
-    pass
-
-
-class Review:
-    # TODO
-    pass
-
-
-class Wishlist:
-    # TODO
-    pass
