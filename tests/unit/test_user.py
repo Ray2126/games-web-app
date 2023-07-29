@@ -1,7 +1,5 @@
 import pytest
-from games.domainmodel.Game import Game
-from games.domainmodel.User import User
-from games.domainmodel.Review import Review
+from games.domainmodel.models import Game, User, Review
 
 @pytest.fixture
 def create_user():

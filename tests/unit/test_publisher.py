@@ -1,5 +1,5 @@
 import pytest
-from games.domainmodel.Publisher import Publisher
+from games.domainmodel.models import Publisher
 
 class TestPublisher:
 

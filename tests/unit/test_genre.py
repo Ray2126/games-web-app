@@ -1,5 +1,5 @@
 import pytest
-from games.domainmodel.Genre import Genre
+from games.domainmodel.models import Genre
 
 class TestGenre:
 

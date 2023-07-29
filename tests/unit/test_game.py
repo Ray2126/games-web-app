@@ -1,7 +1,5 @@
 import pytest
-from games.domainmodel.Game import Game
-from games.domainmodel.Genre import Genre
-from games.domainmodel.Publisher import Publisher
+from games.domainmodel.models import Game, Genre, Publisher
 
 @pytest.fixture
 def game():
