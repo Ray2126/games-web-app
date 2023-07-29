@@ -189,7 +189,7 @@ class Review:
       raise ValueError
     if not isinstance(rating, int) or not (0 <= rating <= 5):
       raise ValueError
-    if not isinstance(comment, str) or not comment.strip():
+    if not isinstance(comment, str):
       raise ValueError
 
     self.__user = user
@@ -223,7 +223,7 @@ class Review:
 
   @comment.setter
   def comment(self, value):
-    if not isinstance(value, str) or not value.strip():
+    if not isinstance(value, str):
       raise ValueError
     self.__comment = value.strip()
 
