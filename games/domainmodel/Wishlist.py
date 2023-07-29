@@ -1,3 +1,0 @@
-class Wishlist:
-    # TODO
-    pass
