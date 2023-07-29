@@ -65,3 +65,13 @@ def test_remove_invalid_game_as_favourite(create_user):
     user = create_user
     with pytest.raises(ValueError):
         user.remove_favourite_game("Invalid Game")
+
+def test_add_review_invalid_type(create_user):
+    user = create_user
+    with pytest.raises(ValueError):
+      user.add_review("Invalid Review")
+
+def test_remove_review(create_user):
+    user = create_user
+    with pytest.raises(ValueError):
+      user.remove_review("Invalid Review")

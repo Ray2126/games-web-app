@@ -295,7 +295,12 @@ class User:
     self.__favourite_games.remove(game)
 
   def add_review(self, review):
-    self.__reviews.append(review)
+    if not isinstance(review, Review):
+        raise ValueError
+    if review not in self.__reviews:
+      self.__reviews.append(review)
 
   def remove_review(self, review):
+    if not isinstance(review, Review):
+        raise ValueError
     self.__reviews.remove(review)

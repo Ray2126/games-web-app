@@ -56,7 +56,6 @@ def test_release_date(game):
     game.release_date = True
 
 def test_description(game):
-  #TODO validate default value?
   game.description = "Boring game"
   assert game.description == "Boring game"
   game.description = 1234
