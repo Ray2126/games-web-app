@@ -6,5 +6,8 @@ Data sources:
 The data files are modified excerpts downloaded from:
 https://huggingface.co/datasets/FronkonGames/steam-games-dataset
 
+## Install Dependencies
+pip install -r ./requirements.txt
 
-
+## Run tests
+python -m pytest tests
